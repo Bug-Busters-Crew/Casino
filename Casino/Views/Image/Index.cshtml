@@ -1,0 +1,17 @@
+﻿@page "/image"
+@model MyClass
+@inject MyClass myClass
+
+<h3>Image to ASCII</h3>
+
+<form asp-controller="Image" asp-action="OnValidSubmit" method="post">
+    <label for="width">Width:</label>
+    <input id="width" type="number" asp-for="myClass.model.Width" />
+
+    <label for="height">Height:</label>
+    <input id="height" type="number" asp-for="myClass.model.Height" />
+
+    <button type="submit">Convert</button>
+</form>
+
+<pre>@myClass.result</pre>
